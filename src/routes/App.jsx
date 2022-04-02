@@ -1,16 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Detail } from '../pages/Detail';
+import  Layout  from '../components/Layout';
 
 import '../styles/global.css';
 
 const App = () => {
     return (
         <BrowserRouter>
-            <Routes>
-                <Route exact path='/' element={<Detail />} />
-                
-            </Routes>
+            <Layout>
+                <Routes>
+                    <Route exact path='/' element={<Detail />} />
+                </Routes>
+            </Layout>
         </BrowserRouter>
     )
 }
