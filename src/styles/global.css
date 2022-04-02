@@ -1,0 +1,36 @@
+:root{
+    --uranian-blue: #ADD9F4;
+    --queen-blue: #476C9B;
+    --cadet-blue: #4D9AA8;
+    --rich-black: #101419;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: var(--uranian-blue);
+}
+
+h1{
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 2.4rem;
+}
+
+p{
+    font-size: 1.6rem;
+}
+
+
+
