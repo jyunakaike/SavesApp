@@ -1,0 +1,179 @@
+.Detail-header{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 3rem 0;
+}
+
+/* nav */
+.Detail-nav{
+    width: 100%;
+    height: 4rem;
+    background-color: var(--cadet-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.Detail-nav div:nth-child(1) {
+    width: 20%;
+    /* background-color: red; */
+    border-right: 0.5px solid;
+    text-align: center;
+}
+.Detail-nav div:nth-child(2) {
+    width: 40%;
+    /* background-color: yellow; */
+    border-right: 0.5px solid;
+    text-align: center;
+}
+.Detail-nav div:nth-child(3) {
+    width: 10%;
+    /* background-color: green; */
+    border-right: 0.5px solid;
+    text-align: center;
+}
+.Detail-nav div:nth-child(4) {
+    width: 10%;
+    /* background-color: blue; */
+    border-right: 0.5px solid;
+    text-align: center;
+}
+.Detail-nav div:nth-child(5) {
+    width: 10%;
+    /* background-color: pink; */
+    border-right: 0.5px solid;
+    text-align: center;
+}
+
+.Detail-nav div:nth-child(6) {
+    width: 10%;
+    /* background-color: white; */
+    border-right: 0.5px solid;
+    text-align: center;
+}
+
+/* table */
+.Detail-table-container{
+    width: 100%;
+}
+
+.Detail-table-title{
+    width: 100%;
+    background-color: aqua;
+    text-align: center;
+}
+.Detail-table-detail{
+    display: flex;
+    /* padding-bottom: 10px; */
+    
+}
+
+.Detail-table-detail div:nth-child(1) {
+    width: 20%;
+    background-color:azure;
+    /* border-right: 0.5px solid; */
+    padding-bottom: 10px;
+    text-align: center;
+}
+.Detail-table-detail div:nth-child(2) {
+    width: 40%;
+    background-color: yellow;
+    /* border-right: 0.5px solid; */
+}
+.Detail-table-detail div:nth-child(3) {
+    width: 10%;
+    background-color:thistle;
+    /* border-right: 0.5px solid; */
+    text-align: center;
+}
+.Detail-table-detail div:nth-child(4) {
+    width: 10%;
+    background-color:wheat;
+    /* border-right: 0.5px solid; */
+    text-align: center;
+}
+.Detail-table-detail div:nth-child(5) {
+    width: 10%;
+    background-color: pink;
+    /* border-right: 0.5px solid; */
+    text-align: center;
+}
+
+.Detail-table-detail div:nth-child(6) {
+    width: 10%;
+    background-color: white;
+    /* border-right: 0.5px solid; */
+    text-align: center;
+}
+
+/* detailtabletotal */
+.Detail-total-title{
+    width: 100%;
+    background-color: greenyellow;
+    text-align: center;
+}
+
+.Detail-table-total{
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem 0;
+}
+
+.Detail-table-total div:nth-last-child(1) {
+    width: 10%;
+    /* border-right: 0.5px solid; */
+    text-align: center;
+}
+.Detail-table-total div:nth-last-child(2) {
+    width: 10%;
+    /* border-right: 0.5px solid; */
+    text-align: center;
+}
+
+
+/* Detail-Total */
+.Detail-total{
+    width: 100%;
+    display: flex;
+    margin-bottom: 13rem;
+}
+
+.Detail-total div:nth-child(1) {
+    width: 20%;
+    background-color:azure;
+    /* border-right: 0.5px solid; */
+    padding-bottom: 10px;
+    text-align: center;
+}
+.Detail-total div:nth-child(2) {
+    width: 40%;
+    background-color: yellow;
+    /* border-right: 0.5px solid; */
+}
+.Detail-total div:nth-child(3) {
+    width: 10%;
+    background-color:thistle;
+    /* border-right: 0.5px solid; */
+    text-align: center;
+}
+.Detail-total div:nth-child(4) {
+    width: 10%;
+    background-color:wheat;
+    /* border-right: 0.5px solid; */
+    text-align: center;
+}
+.Detail-total div:nth-child(5) {
+    width: 10%;
+    background-color: pink;
+    /* border-right: 0.5px solid; */
+    text-align: center;
+}
+
+.Detail-total div:nth-child(6) {
+    width: 10%;
+    background-color: white;
+    /* border-right: 0.5px solid; */
+    text-align: center;
+}
