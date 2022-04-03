@@ -1,0 +1,68 @@
+.Income-container-section{
+    position: relative;
+}
+
+.Income-header{
+    position: relative;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+
+    margin: 3rem 0 0 0 ;
+
+    background-color: var(--cadet-blue);
+}
+
+.Income-header h2{
+    padding-left: 10% ;
+}
+
+.Income-header-icon{
+    position: absolute;
+    right: 15%;
+    
+    width: 10%;
+    height: 100%;
+    /* background-color:red; */
+}
+
+.Income-container{
+    padding: 1% 15%;
+
+}
+
+.Income-container-detail{
+    /* background-color: red; */
+}
+
+.Income-container-detail div{
+    margin: 10% 5%; 
+}
+
+.Income-container-save{
+    width: 100%;
+    display:flex;
+    justify-content: flex-end;
+}
+.Income-container-save button{
+    width: 30%;
+    height: 3rem;
+}
+
+/* modal menu */
+.Income-menu{
+    position: absolute ;
+    top: 29% ;
+    right: 0%;
+    background-color: rgba(255, 255, 255, 0.3);
+    width:30%;
+    height: 30%;
+    padding: 5%;
+    border-radius: 1.5rem;
+    transition: 0.5s;
+}
+.Income-menu div{
+    margin-bottom: 1rem;
+    background-color: yellow;
+}
+
