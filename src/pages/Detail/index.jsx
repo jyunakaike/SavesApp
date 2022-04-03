@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './style.css';
 
-export const Detail = () => {
+export const Detail = ({ setActive }) => {
+  useEffect(() => {
+    setActive("")
+  }, [])
+
+
   return (
     <div>Detail</div>
   )

@@ -1,6 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
-export const Expense = () => {
+export const Expense = ({ setActive }) => {
+  
+  useEffect(() => {
+    setActive("3")
+  }, []);
+
+
   return (
     <div>Expense</div>
   )

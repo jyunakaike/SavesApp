@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // components
 import  Layout  from '../components/Layout';
@@ -13,13 +13,15 @@ import { Income } from '../pages/Income';
 import '../styles/global.css';
 
 const App = () => {
+    const [active, setActive] = useState("");
+
     return (
         <BrowserRouter>
-            <Layout>
+            <Layout active={active} setActive={setActive}>
                 <Routes>
-                    <Route exact path='/' element={<Detail />} />
-                    <Route exact path='/expense' element={<Expense />} />
-                    <Route exact path='/incomes' element={<Income />} />
+                    <Route exact path='/' element={<Detail setActive={setActive} />} />
+                    <Route exact path='/expense' element={<Expense setActive={setActive} />} />
+                    <Route exact path='/incomes' element={<Income setActive={setActive} />} />
                 </Routes>
             </Layout>
         </BrowserRouter>
