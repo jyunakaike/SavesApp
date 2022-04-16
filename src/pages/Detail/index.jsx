@@ -8,7 +8,6 @@ export const Detail = ({ setActive }) => {
     setActive("")
   }, [])
 
-
   return (
     <section className={'Detail-container'}>
       <header className={'Detail-header'}><h2>Detail Year</h2></header>

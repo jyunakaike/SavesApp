@@ -32,7 +32,7 @@ const App = () => {
             const list = await getDocs(collection(db, "detail"));
             list.forEach(doc => {
                 // console.log(`${doc.id} == ${doc.}`)
-                // console.log(doc.data())
+                console.log(doc.data())
             })
         }
         const getDate = () => {
