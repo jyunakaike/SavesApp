@@ -1,16 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import AppContext from '../../context/AppContext';
 
 
 import './style.css';
 
 export const Detail = ({ setActive }) => {
+  const { state, getList } = useContext(AppContext);
+  
+  
   useEffect(() => {
     setActive("")
+    getList()
+    // console.log(state)
   }, [])
+
+  if(state != undefined){
+    console.log('state',state)
+
+  }
+
+  
 
   return (
     <section className={'Detail-container'}>
-      <header className={'Detail-header'}><h2>Detail Year</h2></header>
+      <header className={'Detail-header'}><h2>Detail Year </h2></header>
+      
       <nav className='Detail-nav'>
         <div> <h3>Date</h3></div>
         <div> <h3>Description</h3></div>
@@ -108,10 +122,10 @@ export const Detail = ({ setActive }) => {
           </div>
         </div>
 
-        {/* tabla2  */}
+        {/* tabla3  */}
         <div className='Detail-table-container'>
           <div className='Detail-table-title'>
-            <h3>Febrero</h3>
+            <h3>Marzo</h3>
           </div>
 
           <div className='Detail-table-detail'>
@@ -151,10 +165,10 @@ export const Detail = ({ setActive }) => {
           </div>
         </div>
 
-        {/* tabla2  */}
+        {/* tabla4  */}
         <div className='Detail-table-container'>
           <div className='Detail-table-title'>
-            <h3>Febrero</h3>
+            <h3>Abril</h3>
           </div>
 
           <div className='Detail-table-detail'>
@@ -194,10 +208,10 @@ export const Detail = ({ setActive }) => {
           </div>
         </div>
 
-        {/* tabla2  */}
+        {/* tabla5  */}
         <div className='Detail-table-container'>
           <div className='Detail-table-title'>
-            <h3>Febrero</h3>
+            <h3>Mayo</h3>
           </div>
 
           <div className='Detail-table-detail'>
@@ -237,10 +251,10 @@ export const Detail = ({ setActive }) => {
           </div>
         </div>
 
-        {/* tabla2  */}
+        {/* tabla6  */}
         <div className='Detail-table-container'>
           <div className='Detail-table-title'>
-            <h3>Febrero</h3>
+            <h3>Junio</h3>
           </div>
 
           <div className='Detail-table-detail'>
@@ -280,10 +294,10 @@ export const Detail = ({ setActive }) => {
           </div>
         </div>
 
-        {/* tabla2  */}
+        {/* tabla7  */}
         <div className='Detail-table-container'>
           <div className='Detail-table-title'>
-            <h3>Febrero</h3>
+            <h3>Julio</h3>
           </div>
 
           <div className='Detail-table-detail'>
@@ -323,6 +337,9 @@ export const Detail = ({ setActive }) => {
           </div>
         </div>
       </main>
+
+
+
       <div className='Detail-total-title'>
         <h3>Year total</h3>
       </div>
