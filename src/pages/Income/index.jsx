@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import { MdKeyboardArrowDown } from 'react-icons/md'
+
+import { addData } from '../../services/service';
+
 import './style.css'
 
 export const Income = ({ setActive }) => {
@@ -26,40 +29,38 @@ export const Income = ({ setActive }) => {
       : setMenu(!menu)
   }
 
-  const handleSubmitIncome = () => {
-    const incomeFormData = new FormData(incomeRef.current);
-    // 
-    const buyer = {
-      'funds': incomeFormData.get('funds'),
-      'description': incomeFormData.get('description'),
-      // 'date': dateState,
-      'type': 'incomes'
-    };
-    console.log('Incomes buyer',buyer)
-    // try{
-    //   const buyer = addDoc(collection(db, "detail"), {
-    //     'funds': incomeFormData.get('funds'),
-    //     'description': incomeFormData.get('description'),
-    //     // 'date': dateState,
-    //     'type':'expense'
-    //   });
-    //   console.log("Document written with Id", buyer)
+  const handleSubmitIncome = (event) => {
+    event.preventDefault()
+    const incomeformData = new FormData(incomeRef.current);
 
-    // }
-    // catch(e){
-    //   console.error("error adding document",e )
-    // }
+    const funds = Number(parseFloat(incomeformData.get('funds')).toFixed(2))
+    const description = incomeformData.get('description')
+    const type = 'income'
+
+    try {
+      addData(funds, description ,type)
+    }
+    catch (e) {
+      console.error('error adding document', e)
+    }
+    incomeRef.current.reset();
   }
 
-  const handleSubmitSaves = () => {
-    const saveFormData = new FormData(savesRef.current)
-    const buyer = {
-      'funds': saveFormData.get('funds'),
-      'description': saveFormData.get('description'),
-      // 'date': dateState,
-      'type': 'saves'
+  const handleSubmitSaves = (event) => {
+    event.preventDefault()
+    const saveformData = new FormData(savesRef.current);
+
+    const funds = Number(parseFloat(saveformData.get('funds')).toFixed(2))
+    const description = saveformData.get('description')
+    const type = 'save'
+
+    try {
+      addData(funds, description ,type)
     }
-    console.log('saves', buyer)
+    catch (e) {
+      console.error('error adding document', e)
+    }
+    savesRef.current.reset();
   }
 
   return (
@@ -76,9 +77,9 @@ export const Income = ({ setActive }) => {
             <div className={'Income-container'}>
               <form className={'Income-container-detail'} ref={incomeRef}>
                 <div><h3>Funds (Income)</h3></div>
-                <div><input type="text" name='funds' /></div>
+                <div><input type="text" name='funds' autoComplete="off" /></div>
                 <div><h3>Description</h3></div>
-                <div><input type="text" name='description' /></div>
+                <div><input type="text" name='description' autoComplete="off" /></div>
               </form>
               <div className={'Income-container-save'}>
                 <button type='button' onClick={handleSubmitIncome}  >Save</button>
@@ -94,9 +95,9 @@ export const Income = ({ setActive }) => {
             <div className={'Income-container'}>
               <form className={'Income-container-detail'} ref={savesRef}>
                 <div><h3>Funds (Saves)</h3></div>
-                <div><input type="number" name='funds' /></div>
+                <div><input type="number" name='funds' autoComplete="off" /></div>
                 <div><h3>Description</h3></div>
-                <div><input type="text" name='description' /></div>
+                <div><input type="text" name='description' autoComplete="off" /></div>
               </form>
               <div className={'Income-container-save'}>
                 <button type='button' onClick={handleSubmitSaves} >Save</button>

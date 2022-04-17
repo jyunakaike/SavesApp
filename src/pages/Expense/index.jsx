@@ -1,9 +1,7 @@
-import { addDoc, collection } from 'firebase/firestore';
 import React, { useEffect, useRef } from 'react';
-import "./style.css";
+import { addData } from '../../services/service';
 
-// firestore
-import { db } from '../../db/firebase';
+import "./style.css";
 
 export const Expense = ({ setActive, dateState }) => {
   useEffect(() => {
@@ -12,29 +10,19 @@ export const Expense = ({ setActive, dateState }) => {
 
   const expenseInput = useRef(null);
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault()
     const expenseformData = new FormData(expenseInput.current);
-
-    const buyer = {
-      'funds': expenseformData.get('funds'),
-      'description': expenseformData.get('description'),
-      'date': dateState,
-      'type': 'expense'
-    };
-
-    console.log(buyer)
-    // try {
-    //   const buyer = addDoc(collection(db, "detail"), {
-    //     'funds': expenseformData.get('funds'),
-    //     'description': expenseformData.get('description'),
-    //     'date': dateState,
-    //     'type':'expense'
-    //   });
-    //   console.log("Document written with Id", buyer)
-    // }
-    // catch (e) {
-    //   console.error('error adding document', e)
-    // }
+    const funds = Number(parseFloat(expenseformData.get('funds')).toFixed(2))
+    const description = expenseformData.get('description')
+    const type = 'expense'
+    try {
+      addData(funds, description ,type)
+    }
+    catch (e) {
+      console.error('error adding document', e)
+    }
+    expenseInput.current.reset();
   }
 
   return (
@@ -46,9 +34,9 @@ export const Expense = ({ setActive, dateState }) => {
         <div className={'Expense-container'} >
           <form className={'Expense-container-detail'} ref={expenseInput} >
             <div><h3>Funds (Expense)</h3></div>
-            <div><input type="number" name='funds' /></div>
+            <div><input type="number" name='funds' autoComplete="off" /></div>
             <div><h3>Description</h3></div>
-            <div><input type="text" name='description' /></div>
+            <div><input type="text" name='description' autoComplete="off" /></div>
 
           </form>
           <div className={'Expense-container-save'}>
@@ -59,3 +47,4 @@ export const Expense = ({ setActive, dateState }) => {
     </section>
   )
 }
+
